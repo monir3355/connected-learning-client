@@ -5,7 +5,7 @@ import Footer from "../components/shared/footer/Footer";
 
 const Main = () => {
   return (
-    <div>
+    <div className="max-w-[1440px] mx-auto">
       <Header />
       <div className="min-h-[calc(100vh-444px)]">
         <Outlet />

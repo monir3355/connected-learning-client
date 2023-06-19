@@ -56,7 +56,7 @@ const Header = () => {
     </>
   );
   return (
-    <header className="bg-base-300 py-2">
+    <header className="bg-[#edeef3] py-2">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
