@@ -8,3 +8,6 @@
 .button-outline {
   @apply py-2 px-4 hover:bg-blue-600 rounded-full border border-blue-600 cursor-pointer text-blue-600 hover:text-white;
 }
+.Container {
+  @apply container mx-auto px-4 md:px-0;
+}

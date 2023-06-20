@@ -2,6 +2,10 @@ import React from "react";
 import { FaVideo } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import bannerImg from "../../assets/images/homeBanner.png";
+import dribbleImg from "../../assets/images/media/dribble.png";
+import googleImg from "../../assets/images/media/google.png";
+import latticeImg from "../../assets/images/media/lattice.png";
+import microImg from "../../assets/images/media/micro.png";
 
 const HomeBanner = () => {
   return (
@@ -34,6 +38,12 @@ const HomeBanner = () => {
         <div className="md:w-1/2 ">
           <img className="w-5/6 mx-auto" src={bannerImg} alt="" />
         </div>
+      </div>
+      <div className="flex justify-between items-center bg-white container mx-auto pr-6 py-4 mt-6">
+        <img className="h-10 lg:h-20" src={dribbleImg} alt="" />
+        <img className="h-10 lg:h-28" src={googleImg} alt="" />
+        <img className="h-10 lg:h-20" src={latticeImg} alt="" />
+        <img className="h-4 lg:h-8 " src={microImg} alt="" />
       </div>
     </div>
   );
