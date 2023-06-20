@@ -5,7 +5,7 @@ import aboutImg2 from "../../assets/images/digital/digital2.png";
 
 const AboutUs = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-16 Container">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-20 pb-14 Container">
       <div className="h-80 sm:h-96">
         <div className="relative">
           <img
@@ -26,8 +26,8 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="space-y-3">
-        <h6 className="text-blue-600 font-semibold">About Us</h6>
-        <h2 className="text-4xl lg:text-6xl font-semibold ">
+        <h6 className="text-blue-600 font-semibold xl">About Us</h6>
+        <h2 className="text-3xl lg:text-5xl font-semibold ">
           We are providing the best online digital courses.
         </h2>
         <p>
