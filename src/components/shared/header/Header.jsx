@@ -47,7 +47,7 @@ const Header = () => {
           className={({ isActive }) =>
             isActive
               ? "text-blue-700 border-b-2 border-blue-700 w-1/2"
-              : "hover:text-blue-700 hover:border-b-2 hover:border-blue-700 hover:w-1/2"
+              : "hover:text-blue-700 hover:border-b-2 hover:border-blue-700 hover:w-1/2 border-[#edeef3] border-b-2"
           }
         >
           Contact
@@ -56,7 +56,7 @@ const Header = () => {
     </>
   );
   return (
-    <header className="bg-[#edeef3] py-2">
+    <header className="bg-[#edeef3] py-2 sticky top-0 w-full z-50 shadow-md">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">

@@ -26,7 +26,7 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="space-y-3">
-        <h6 className="text-blue-600 font-semibold xl">About Us</h6>
+        <h6 className="text-blue-600 font-semibold text-xl">About Us</h6>
         <h2 className="text-3xl lg:text-5xl font-semibold ">
           We are providing the best online digital courses.
         </h2>

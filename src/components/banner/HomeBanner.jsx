@@ -10,7 +10,7 @@ import microImg from "../../assets/images/media/micro.png";
 const HomeBanner = () => {
   return (
     <div className="bg-[#edeef3] py-16">
-      <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-6 container mx-auto">
+      <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-6 Container">
         <div className="md:w-1/2 space-y-6 px-2 md:px-0">
           <h1 className="font-bold text-4xl md:text-5xl xl:text-6xl">
             For Every Student <br />
@@ -39,7 +39,7 @@ const HomeBanner = () => {
           <img className="w-5/6 mx-auto" src={bannerImg} alt="" />
         </div>
       </div>
-      <div className="flex justify-between items-center bg-white container mx-auto pr-6 py-4 mt-6">
+      <div className="w-11/12 flex justify-between items-center bg-white container mx-auto pr-6 py-4 mt-6">
         <img className="h-10 lg:h-20" src={dribbleImg} alt="" />
         <img className="h-10 lg:h-28" src={googleImg} alt="" />
         <img className="h-10 lg:h-20" src={latticeImg} alt="" />

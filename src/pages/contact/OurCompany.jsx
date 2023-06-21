@@ -3,12 +3,13 @@ import location from "../../assets/images/contact/contactIcon/Group 121.png";
 import contact1 from "../../assets/images/contact/contactIcon/Group 122.png";
 import contact2 from "../../assets/images/contact/contactIcon/Group 124.png";
 import contact from "../../assets/images/contact/contact.png";
+import AnyQuestion from "./AnyQuestion";
 
 const OurCompany = () => {
   return (
     <div className="Container py-16">
       <div className="space-y-3 text-center">
-        <h6 className="text-blue-600 font-semibold xl">Team Member</h6>
+        <h6 className="text-blue-600 font-semibold text-xl">Team Member</h6>
         <h2 className="text-3xl lg:text-5xl font-semibold">
           Our Company <br />
           Contact Now
@@ -57,6 +58,7 @@ const OurCompany = () => {
           <img src={contact} alt="" />
         </div>
       </div>
+      <AnyQuestion />
     </div>
   );
 };

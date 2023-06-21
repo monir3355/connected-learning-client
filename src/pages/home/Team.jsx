@@ -9,7 +9,7 @@ const Team = () => {
     <div className="bg-[#edeef3]">
       <div className="Container py-16">
         <div className="space-y-3 text-center">
-          <h6 className="text-blue-600 font-semibold xl">Team Member</h6>
+          <h6 className="text-blue-600 font-semibold text-xl">Team Member</h6>
           <h2 className="text-3xl lg:text-5xl font-semibold">
             Popular Professional <br />
             Teachers
