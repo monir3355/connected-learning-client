@@ -12,7 +12,7 @@ const Banner = ({ children, img }) => {
       />
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
         <h1 className="text-2xl lg:text-4xl font-bold flex items-center justify-center">
-          Home <FaGreaterThan />{" "}
+          Home <FaGreaterThan className="mt-2 mx-4" />{" "}
           <span className="text-blue-600">{children}</span>
         </h1>
       </div>

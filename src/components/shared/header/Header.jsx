@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
+import { AuthContext } from "../../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user);
+  const handleLogOut = () => {
+    Swal.fire({
+      title: "Are you want Logout?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Logout!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logOut()
+          .then(() => {
+            Swal.fire("Logout!", "You are logout", "success");
+          })
+          .then((error) => {
+            console.log(error);
+          });
+      }
+    });
+  };
   const navItems = (
     <>
       <li className="flex justify-start">
@@ -10,8 +35,8 @@ const Header = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "text-blue-700 border-b-2 border-blue-700 w-1/2"
-              : "hover:text-blue-700 hover:border-b-2 hover:border-blue-700 hover:w-1/2"
+              ? "text-blue-700 border-b-2 border-blue-700"
+              : "hover:text-blue-700 hover:border-b-2 border-b-2 hover:border-blue-700"
           }
         >
           Home
@@ -22,8 +47,8 @@ const Header = () => {
           to="/about"
           className={({ isActive }) =>
             isActive
-              ? "text-blue-700 border-b-2 border-blue-700 w-1/2"
-              : "hover:text-blue-700 hover:border-b-2 hover:border-blue-700 hover:w-1/2"
+              ? "text-blue-700 border-b-2 border-blue-700"
+              : "hover:text-blue-700 hover:border-b-2 border-b-2 hover:border-blue-700"
           }
         >
           About
@@ -34,8 +59,8 @@ const Header = () => {
           to="/course"
           className={({ isActive }) =>
             isActive
-              ? "text-blue-700 border-b-2 border-blue-700 w-1/2"
-              : "hover:text-blue-700 hover:border-b-2 hover:border-blue-700 hover:w-1/2"
+              ? "text-blue-700 border-b-2 border-blue-700"
+              : "hover:text-blue-700 hover:border-b-2 border-b-2 hover:border-blue-700"
           }
         >
           Course
@@ -46,8 +71,8 @@ const Header = () => {
           to="/contact"
           className={({ isActive }) =>
             isActive
-              ? "text-blue-700 border-b-2 border-blue-700 w-1/2"
-              : "hover:text-blue-700 hover:border-b-2 hover:border-blue-700 hover:w-1/2 border-[#edeef3] border-b-2"
+              ? "text-blue-700 border-b-2 border-blue-700"
+              : "hover:text-blue-700 hover:border-b-2 border-b-2 hover:border-blue-700"
           }
         >
           Contact
@@ -91,12 +116,30 @@ const Header = () => {
           <ul className="flex gap-6">{navItems}</ul>
         </div>
         <div className="navbar-end flex gap-3">
-          <Link to="login">
-            <button className="button-outline">Login</button>
-          </Link>
-          <Link to="signup">
-            <button className="button-primary">Sign Up</button>
-          </Link>
+          {user ? (
+            <>
+              <label
+                className="btn btn-ghost btn-circle avatar mr-2 tooltip tooltip-bottom"
+                data-tip={user?.displayName}
+              >
+                <div className="w-12 rounded-full">
+                  <img src={user?.photoURL} />
+                </div>
+              </label>
+              <button onClick={handleLogOut} className="btn button-primary">
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="login">
+                <button className="button-outline">Login</button>
+              </Link>
+              <Link to="signup">
+                <button className="button-primary">Sign Up</button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>

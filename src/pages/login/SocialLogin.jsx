@@ -12,34 +12,36 @@ const SocialLogin = () => {
   const handleGoogle = () => {
     googleSignIn()
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        navigate(from, { replace: true });
+        const currentUSer = result.user;
+        // console.log(currentUSer);
+        const savedUser = {
+          name: currentUSer.displayName,
+          email: currentUSer.email,
+          photo_url: currentUSer.photoURL,
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(savedUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+          });
       })
-      .catch((error) => {
-        setError(error.message);
-      });
-  };
-  const handleGithub = () => {
-    githubSignIn()
-      .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        navigate(from, { replace: true });
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+      .catch((error) => console.log(error.message));
   };
   return (
     <div>
       <div className="divider pt-0 mt-0">OR</div>
-      <div className="flex flex-col sm:flex-row justify-center items-center mb-8 gap-6">
+      <div className="flex flex-col lg:flex-row justify-center items-center mb-8 gap-6">
         <button onClick={handleGoogle} className="btn button-primary btn-wide">
           <FaGoogle className="text-2xl" />{" "}
           <span className="ml-2">Login With Google</span>
         </button>
-        <button onClick={handleGithub} className="btn button-primary btn-wide">
+        <button className="btn button-primary btn-wide">
           <FaGithub className="text-2xl" />{" "}
           <span className="ml-2">Login With Github</span>
         </button>

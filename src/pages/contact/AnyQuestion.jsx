@@ -10,7 +10,7 @@ const AnyQuestion = () => {
   } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
-    <div className="Container py-16">
+    <div className="Container py-16 bg-[#edeef3]">
       <div className="space-y-3 text-center">
         <h6 className="text-blue-600 font-semibold text-xl">Contact Us</h6>
         <h2 className="text-3xl lg:text-5xl font-semibold">

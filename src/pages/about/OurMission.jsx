@@ -5,7 +5,7 @@ const OurMission = () => {
   return (
     <div className="flex flex-col-reverse md:flex-row gap-20 Container my-20">
       <div className="space-y-5 md:w-1/2">
-        <h6 className="text-blue-600 font-semibold xl">Our Mission</h6>
+        <h6 className="text-blue-600 font-semibold text-xl">Our Mission</h6>
         <h2 className="text-3xl lg:text-5xl font-semibold ">
           Build Better For Best Economy
         </h2>

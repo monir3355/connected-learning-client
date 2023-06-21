@@ -18,7 +18,19 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    signIn(data.email, data.password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setSuccess("successfully login");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
   return (
     <div className="bg-[#edeef3] py-16 px-4 md:px-0">
       <h6 className="font-semibold text-3xl mb-8 text-center">Please Login</h6>

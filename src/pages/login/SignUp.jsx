@@ -1,18 +1,61 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const SignUp = () => {
   const [disabled, setDisabled] = useState(true);
   const [showPass, setShowPass] = useState(false);
+  const { createUser, UpdateUser, setPUpdate } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    createUser(data.email, data.password)
+      .then((result) => {
+        console.log(result.user);
+        setSuccess("Successfully account create");
+        UpdateUser(data.name, data.photo)
+          .then(() => {
+            console.log("Profile Updated");
+            setPUpdate(new Date().getTime());
+            setSuccess("Successfully login");
+            navigate("/");
+            const savedUser = {
+              name: data.name,
+              photo_url: data.photo,
+              email: data.email,
+              password: data.password,
+              phone: data.phone,
+            };
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(savedUser),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                console.log(data);
+              });
+          })
+          .catch((error) => {
+            setError(error.message);
+          });
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
   return (
     <div className="bg-[#edeef3] py-16">
       <h6 className="font-semibold text-3xl mb-8 text-center">
@@ -227,6 +270,8 @@ const SignUp = () => {
               <Link to="/login" className="link link-hover text-blue-500">
                 Login
               </Link>
+              <p className="text-red-500">{error}</p>
+              <p className="text-green-700">{success}</p>
             </p>
           </div>
           <SocialLogin />
