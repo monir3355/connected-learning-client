@@ -25,9 +25,11 @@ const OurMission = () => {
         </p>
         <button className="button-primary">Join Our Team</button>
       </div>
-      <div className="md:w-1/2">
-        <img className="" src={missionImg} alt="" />
-        <div className="bg-white shadow-md inline-flex flex-col px-10 py-4 rounded-lg -mb-20">
+      <div className="md:w-1/2 relative">
+        <div>
+          <img className="" src={missionImg} alt="" />
+        </div>
+        <div className="bg-white shadow-md inline-flex flex-col px-10 py-4 rounded-lg -mb-20 absolute bottom-10 md:bottom-[60%] lg:bottom-48 lg:-left-32">
           <p className="font-bold">MST: Alonker lon</p>
           <p className="text-blue-600">CEO,Education LTD</p>
         </div>

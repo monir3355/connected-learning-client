@@ -36,7 +36,7 @@ const SignUp = () => {
               password: data.password,
               phone: data.phone,
             };
-            fetch("http://localhost:5000/users", {
+            fetch("https://connected-learning-server.vercel.app/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

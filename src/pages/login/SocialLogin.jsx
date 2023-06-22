@@ -19,7 +19,7 @@ const SocialLogin = () => {
           email: currentUSer.email,
           photo_url: currentUSer.photoURL,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://connected-learning-server.vercel.app/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

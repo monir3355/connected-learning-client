@@ -1,0 +1,6 @@
+.menuBottomUnderActive {
+  @apply text-blue-700 before:absolute before:content-[''] before:border-b-2 before:border-blue-700 before:bottom-0 font-semibold before:w-6;
+}
+.menuHoverNonActive {
+  @apply hover:text-blue-700 hover:before:content-[''] hover:before:absolute hover:before:w-6 hover:before:border-b-2 before:border-b-2 hover:before:bottom-0 hover:before:border-blue-700 lg:border-[#edeef3] font-semibold;
+}

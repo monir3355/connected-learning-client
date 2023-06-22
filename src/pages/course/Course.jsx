@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Course = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/courses")
+    fetch("https://connected-learning-server.vercel.app/courses")
       .then((res) => res.json())
       .then((data) => {
         setCourses(data);

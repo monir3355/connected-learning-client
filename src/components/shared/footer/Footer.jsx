@@ -45,7 +45,9 @@ const Footer = () => {
       </div>
       <div>
         <span className="text-white text-lg font-semibold">Resources</span>
-        <a className="link link-hover">Contact</a>
+        <Link to="/contact" className="link link-hover">
+          Contact
+        </Link>
         <a className="link link-hover">Give Feedback</a>
         <a className="link link-hover">Hello@example.com</a>
       </div>
@@ -58,7 +60,7 @@ const Footer = () => {
           />{" "}
           <button className="button-primary absolute -ml-10">Started</button>
         </div>
-        <a className="link link-hover">Email Us</a>
+        <a className="link link-hover mt-4">Email Us</a>
         <a className="link link-hover">RK@Oama.io</a>
         <a className="link link-hover">Bolomu All Rights Reserved, 2021</a>
       </div>

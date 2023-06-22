@@ -7,6 +7,7 @@ import Contact from "../pages/contact/Contact";
 import Login from "../pages/login/Login";
 import SignUp from "../pages/login/SignUp";
 import AddCourse from "../pages/AddCourse";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addCourse",
-        element: <AddCourse />,
+        element: (
+          <PrivateRoute>
+            <AddCourse />
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import { AuthContext } from "../../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import "./header.css";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -30,49 +31,41 @@ const Header = () => {
   };
   const navItems = (
     <>
-      <li className="flex justify-start">
+      <li className="flex justify-start relative">
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive
-              ? "text-blue-700 border-b-2 border-blue-700"
-              : "hover:text-blue-700 hover:border-b-2 border-b-2 hover:border-blue-700"
+            isActive ? "menuBottomUnderActive" : "menuHoverNonActive"
           }
         >
           Home
         </NavLink>
       </li>
-      <li className="flex justify-start">
+      <li className="flex justify-start relative">
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive
-              ? "text-blue-700 border-b-2 border-blue-700"
-              : "hover:text-blue-700 hover:border-b-2 border-b-2 hover:border-blue-700"
+            isActive ? "menuBottomUnderActive" : "menuHoverNonActive"
           }
         >
           About
         </NavLink>
       </li>
-      <li className="flex justify-start">
+      <li className="flex justify-start relative">
         <NavLink
           to="/course"
           className={({ isActive }) =>
-            isActive
-              ? "text-blue-700 border-b-2 border-blue-700"
-              : "hover:text-blue-700 hover:border-b-2 border-b-2 hover:border-blue-700"
+            isActive ? "menuBottomUnderActive" : "menuHoverNonActive"
           }
         >
           Course
         </NavLink>
       </li>
-      <li className="flex justify-start">
+      <li className="flex justify-start relative">
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            isActive
-              ? "text-blue-700 border-b-2 border-blue-700"
-              : "hover:text-blue-700 hover:border-b-2 border-b-2 hover:border-blue-700"
+            isActive ? "menuBottomUnderActive" : "menuHoverNonActive"
           }
         >
           Contact
